@@ -1,9 +1,15 @@
-val scanner = Scanner(System.`in`)
-
 import java.lang.System.exit
 import java.util.*
 
-fun mainMenu() : int {
+val scanner = Scanner(System.`in`)
+
+
+
+fun main(args: Array<String>) {
+    runMenu()
+}
+
+fun mainMenu() : Int {
     println("")
     println("---------")
     println("NOTE KEEPER APP")
@@ -50,3 +56,4 @@ fun exitApp() {
     println("Exiting...bye")
     exit(0)
 }
+
