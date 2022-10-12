@@ -1,7 +1,35 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+val scanner = Scanner(System.`in`)
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+import java.lang.System.exit
+import java.util.*
+
+fun mainMenu() : int {
+    println("")
+    println("---------")
+    println("NOTE KEEPER APP")
+    println("---------")
+    println("NOTE MENU")
+    println("1) Add a note")
+    println("2) List all notes")
+    println("3) Update a note")
+    println("4) Delete a note")
+    println("---------")
+    println("0) Exit")
+    println("---------")
+    print ("==>> ")
+    return scanner.nextInt()
+}
+
+fun runMenu() {
+    do {
+        val option = mainMenu()
+        when (option) {
+            1  -> addNote()
+            2  -> listNotes()
+            3  -> updateNote()
+            4  -> deleteNote()
+            0  -> exitApp()
+            else -> println("Invalid option entered: " + option)
+        }
+    } while (true)
 }
