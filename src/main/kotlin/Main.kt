@@ -35,7 +35,7 @@ fun runMenu() {
             3  -> updateNote()
             4  -> deleteNote()
             0  -> exitApp()
-            else -> println("Invalid option entered: " + option)
+            else -> println("Invalid option entered: ${option}")
         }
     } while (true)
 }
