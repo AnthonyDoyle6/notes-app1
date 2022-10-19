@@ -1,10 +1,11 @@
+import controllers.NoteAPI
 import mu.KotlinLogging
 import utils.ScannerInput
 import java.lang.System.exit
 
 
 private val logger = KotlinLogging.logger {}
-
+private val noteAPI = NoteAPI()
 fun main(args: Array<String>) {
     runMenu()
 }
