@@ -18,6 +18,9 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging:3.0.2")
     implementation("org.slf4j:slf4j-simple:2.0.3")
 
+    implementation("com.thoughtworks.xstream:xstream:1.4.19")
+    implementation("org.codehaus.jettison:jettison:1.5.1")
+
 }
 
 tasks.test {
