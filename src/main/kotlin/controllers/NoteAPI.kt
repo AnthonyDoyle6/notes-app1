@@ -1,11 +1,14 @@
 package controllers
 
 import models.Note
+import persistence.JSONSerializer
 import persistence.Serializer
+import java.io.File
 
 class NoteAPI(serializerType: Serializer) {
     private var notes = ArrayList<Note>()
-    private var serializer: Serializer = serializerType
+    //private val noteAPI = NoteAPI(XMLSerializer(File("notes.xml")))
+    private val noteAPI = NoteAPI(JSONSerializer(File("notes.json")))
     fun add (note: Note): Boolean {
         return notes.add(note)
     }
