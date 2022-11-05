@@ -12,17 +12,11 @@ class NoteAPI(serializerType: Serializer) {
     fun add (note: Note): Boolean {
         return notes.add(note)
     }
-        fun listAllNotes(): String {
-            return if (notes.isEmpty()) {
-                "No Notes Returned"
-            } else{
-                var listOfNotes = ""
-                for (i in notes.indices) {
-                    listOfNotes += "${i}: ${notes[i]} \n"
-                }
-                  listOfNotes
-            }
-        }
+    fun listAllNotes(): String =
+        if  (notes.isEmpty()) "No notes stored"
+        else notes.joinToString (separator = "\n") { note ->
+            notes.indexOf(note).toString() + ": " + note.toString() }
+
     fun numberOfNotes(): Int {
         return notes.size
     }
@@ -31,6 +25,10 @@ class NoteAPI(serializerType: Serializer) {
         return if (isValidListIndex(index, notes)) {
             notes[index]
         } else null
+    }
+
+    fun isValidIndex(index: Int) :Boolean {
+        return isValidListIndex(index, notes);
     }
 
     //utility method to determine if an index is valid in a list.
@@ -58,6 +56,7 @@ class NoteAPI(serializerType: Serializer) {
         //if the note was not found, return false, indicating that the update was not successful
         return false
     }
+
 
     fun isValidIndex(index: Int) :Boolean{
         return isValidListIndex(index, notes);
